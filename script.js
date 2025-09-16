@@ -6,5 +6,3 @@ function showNextImage() {
   currentIndex = (currentIndex + 1) % images.length;
   images[currentIndex].classList.add("active");
 }
-
-setInterval(showNextImage, 3000); // muda a imagem a cada 3 segundos
