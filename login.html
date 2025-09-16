@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login Funcionários</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Funcionários</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body class="login-page">
-    <div class="login-container">
-        <h2>Área Restrita</h2>
-        <form id="loginForm">
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required />
+  <main>
+    <section class="login-container" aria-labelledby="login-title">
+      <h2 id="login-title">Área Restrita</h2>
+      <form id="loginForm" aria-describedby="login-desc">
+        <p id="login-desc">Digite seu usuário e senha para acessar a área restrita.</p>
 
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required />
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required />
 
-            <button type="submit">Entrar</button>
-        </form>
-        <a href="index.html" class="voltar">← Voltar à Página Inicial</a>
-    </div>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required />
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // evita envio do formulário
+        <button type="submit">Entrar</button>
+      </form>
+      <a href="index.html" class="voltar" role="button" aria-label="Voltar para página inicial">← Voltar à Página Inicial</a>
+    </section>
+  </main>
 
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-            if (username === 'admim' && password === 'admim') {
-                alert('Login realizado com sucesso!');
-                // Aqui você pode redirecionar para a área restrita, se existir
-                // Exemplo: window.location.href = 'area-restrita.html';
-            } else {
-                alert('Funcionário não cadastrado');
-            }
-        });
-    </script>
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === 'admim' && password === 'admim') {
+        alert('Login realizado com sucesso!');
+        // redirecionar se quiser
+      } else {
+        alert('Funcionário não cadastrado');
+      }
+    });
+  </script>
 </body>
-
 </html>

@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -7,20 +8,29 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header e Nav */
+header {
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
-  color: white;
-  padding: 10px 20px;
   flex-wrap: wrap;
 }
 
 .navbar h1 {
-  margin: 0;
+  font-size: 1.8rem;
 }
 
 .navbar ul {
@@ -30,25 +40,52 @@ body {
 }
 
 .navbar ul li {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-section {
-  padding: 40px 20px;
+.navbar ul li a:hover,
+.navbar ul li a:focus {
+  color: #f0a500;
+  outline: none;
+}
+
+/* Main content */
+main {
+  flex: 1;
   max-width: 1000px;
-  margin: auto;
+  width: 90%;
+  margin: 30px auto;
 }
 
+/* Seções */
+section {
+  margin-bottom: 50px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #f0a500;
+  padding-bottom: 5px;
+  color: #222;
+}
+
+/* Carrossel */
 .carrossel {
   position: relative;
   width: 100%;
   height: 300px;
   overflow: hidden;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .carrossel img {
@@ -58,64 +95,118 @@ section {
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  border-radius: 8px;
 }
 
 .carrossel img.active {
   opacity: 1;
 }
 
-footer {
-  text-align: center;
-  background: #222;
-  color: white;
-  padding: 15px;
-  margin-top: 40px;
+/* Blockquotes (clientes) */
+blockquote {
+  font-style: italic;
+  color: #555;
+  margin: 15px 0;
+  padding-left: 15px;
+  border-left: 4px solid #f0a500;
 }
 
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+}
+
+/* Login page */
 .login-page {
+  background-color: #f9f9f9;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: #f4f4f4;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .login-container {
-  background: white;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 90%;
+  background-color: white;
+  padding: 35px 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
   max-width: 400px;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.login-container label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
 }
 
 .login-container input {
-  width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #f0a500;
+  outline: none;
 }
 
 .login-container button {
-  width: 100%;
-  padding: 10px;
-  background: #222;
+  background-color: #222;
   color: white;
+  padding: 12px;
   border: none;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover,
+.login-container button:focus {
+  background-color: #f0a500;
+  outline: none;
+  color: #222;
 }
 
 .login-container .voltar {
-  display: block;
-  margin-top: 15px;
-  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+  color: #666;
   text-decoration: none;
-  color: #555;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-container .voltar:hover,
+.login-container .voltar:focus {
+  color: #f0a500;
+  outline: none;
 }
 
 /* Responsivo */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -124,9 +215,32 @@ footer {
   .navbar ul {
     flex-direction: column;
     width: 100%;
+    margin-top: 10px;
   }
 
   .navbar ul li {
     margin: 10px 0;
+  }
+
+  main {
+    width: 95%;
+  }
+
+  .carrossel {
+    height: 220px;
+  }
+
+  .carrossel img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 25px 20px;
+  }
+
+  .navbar h1 {
+    font-size: 1.5rem;
   }
 }

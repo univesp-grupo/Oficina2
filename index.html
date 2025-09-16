@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oficina Mecânica Sales</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oficina Mecânica Sales</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <header>
-        <nav class="navbar">
-            <h1>Oficina Mecânica Sales</h1>
-            <ul>
-                <li><a href="#quem-somos">Quem Somos</a></li>
-                <li><a href="#diferencial">Nosso Diferencial</a></li>
-                <li><a href="#clientes">Opinião de Clientes</a></li>
-                <li><a href="#localizacao">Localização</a></li>
-                <li><a href="login.html">Área Restrita</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar" aria-label="Menu principal">
+      <h1>Oficina Mecânica Sales</h1>
+      <ul>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#diferencial">Nosso Diferencial</a></li>
+        <li><a href="#clientes">Opinião de Clientes</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a href="login.html">Área Restrita</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="carrossel" id="carrossel">
-        <img src="img/oficina1.jpg" alt="Imagem 1" class="active" />
-        <img src="img/oficina2.jpg" alt="Imagem 2" />
-        <img src="img/oficina3.jpg" alt="Imagem 3" />
+  <main>
+    <section class="carrossel" id="carrossel" aria-label="Imagens da oficina">
+      <img src="img/oficina1.jpg" alt="Imagem da oficina 1" class="active" />
+      <img src="img/oficina2.jpg" alt="Imagem da oficina 2" />
+      <img src="img/oficina3.jpg" alt="Imagem da oficina 3" />
     </section>
 
-    <section id="quem-somos">
-        <h2>Quem Somos</h2>
-        <p>Somos uma oficina especializada em manutenção preventiva e corretiva com mais de 20 anos de experiência.</p>
+    <section id="quem-somos" tabindex="0">
+      <h2>Quem Somos</h2>
+      <p>Somos uma oficina especializada em manutenção preventiva e corretiva com mais de 20 anos de experiência.</p>
     </section>
 
-    <section id="diferencial">
-        <h2>Nosso Diferencial</h2>
-        <p>Atendimento rápido, peças de qualidade e garantia estendida nos serviços realizados.</p>
+    <section id="diferencial" tabindex="0">
+      <h2>Nosso Diferencial</h2>
+      <p>Atendimento rápido, peças de qualidade e garantia estendida nos serviços realizados.</p>
     </section>
 
-    <section id="clientes">
-        <h2>Opinião de Clientes</h2>
-        <blockquote>"Serviço excelente e equipe super atenciosa!" - João M.</blockquote> <br>
-        <blockquote>"Consertaram meu carro em tempo recorde!" - Maria F.</blockquote>
+    <section id="clientes" tabindex="0">
+      <h2>Opinião de Clientes</h2>
+      <blockquote>"Serviço excelente e equipe super atenciosa!" - João M.</blockquote>
+      <blockquote>"Consertaram meu carro em tempo recorde!" - Maria F.</blockquote>
     </section>
 
-    <section id="localizacao">
-        <h2>Localização</h2>
-        <iframe
-            src="https://www.google.com/maps?q=Rua+Alameda+dos+Timburis,+39,+Franco+da+Rocha+-+Portal+da+Alamedas&output=embed"
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+    <section id="localizacao" tabindex="0">
+      <h2>Localização</h2>
+      <iframe
+        src="https://www.google.com/maps?q=Rua+Alameda+dos+Timburis,+39,+Franco+da+Rocha+-+Portal+da+Alamedas&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa com localização da oficina">
+      </iframe>
     </section>
+  </main>
 
+  <footer>
+    <p>&copy; 2025 Oficina Mecânica Sales. Todos os direitos reservados.</p>
+  </footer>
 
-
-    <footer>
-        <p>&copy; 2025 Oficina Mecânica Sales. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
