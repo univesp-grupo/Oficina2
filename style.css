@@ -244,3 +244,30 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* Botão flutuante */
+.whatsapp-btn {
+position: fixed;
+bottom: 20px;     /* distância do rodapé */
+right: 20px;      /* distância da direita */
+width: 60px;
+height: 60px;
+background-color: #25d366; /* cor do WhatsApp */
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+cursor: pointer;
+z-index: 1000;
+transition: transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+transform: scale(1.1);
+}
+
+.whatsapp-btn img {
+width: 60px; 
+height: 60px;
+}
