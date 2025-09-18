@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oficina Sales</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Barra superior */
+    header {
+      background-color: #1a73e8;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    /* Tabela */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+
+    input {
+      width: 90%;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* Linha do total geral */
+    tfoot td {
+      font-weight: bold;
+      background-color: #e8f0fe;
+    }
+
+    /* Botão de rodapé */
+    footer {
+      background-color: #1a73e8;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    footer button {
+      background-color: #e63946;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    footer button:hover {
+      background-color: #c1121f;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+      header {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Oficina Sales
+  </header>
+
+  <main>
+    <table id="tabelaPecas">
+      <thead>
+        <tr>
+          <th>Cadastro de Peças</th>
+          <th>Valor Unitário (R$)</th>
+          <th>Quantidade</th>
+          <th>Valor Total (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" placeholder="Nome da peça"></td>
+          <td><input type="number" min="0" step="0.01" class="valorUnitario"></td>
+          <td><input type="number" min="0" class="quantidade"></td>
+          <td><input type="text" class="valorTotal" readonly></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Total Geral (R$)</td>
+          <td><input type="text" id="totalGeral" readonly></td>
+        </tr>
+      </tfoot>
+    </table>
+    <br>
+    <button onclick="adicionarLinha()">Adicionar Peça</button>
+  </main>
+
+  <footer>
+    <button onclick="sairPagina()">Sair</button>
+  </footer>
+
+  <script>
+    // Atualiza valores automaticamente
+    document.addEventListener("input", function(e) {
+      if (e.target.classList.contains("valorUnitario") || e.target.classList.contains("quantidade")) {
+        let linha = e.target.closest("tr");
+        let valorUnitario = parseFloat(linha.querySelector(".valorUnitario").value) || 0;
+        let quantidade = parseInt(linha.querySelector(".quantidade").value) || 0;
+        let total = valorUnitario * quantidade;
+        linha.querySelector(".valorTotal").value = total.toFixed(2);
+      }
+      atualizarTotalGeral();
+    });
+
+    // Adiciona nova linha
+    function adicionarLinha() {
+      let tabela = document.getElementById("tabelaPecas").getElementsByTagName("tbody")[0];
+      let novaLinha = tabela.insertRow();
+      novaLinha.innerHTML = `
+        <td><input type="text" placeholder="Nome da peça"></td>
+        <td><input type="number" min="0" step="0.01" class="valorUnitario"></td>
+        <td><input type="number" min="0" class="quantidade"></td>
+        <td><input type="text" class="valorTotal" readonly></td>
+      `;
+    }
+
+    // Atualiza total geral
+    function atualizarTotalGeral() {
+      let totais = document.querySelectorAll(".valorTotal");
+      let soma = 0;
+      totais.forEach(input => {
+        soma += parseFloat(input.value) || 0;
+      });
+      document.getElementById("totalGeral").value = soma.toFixed(2);
+    }
+
+    // Botão sair
+    function sairPagina() {
+      window.close(); // Pode não funcionar em todos navegadores
+      window.location.href = "index.html"; // Redireciona para página em branco
+    }
+  </script>
+</body>
+</html>
