@@ -1,8 +1,14 @@
-let currentIndex = 0;
-const images = document.querySelectorAll(".carrossel img");
 
-function showNextImage() {
-  images[currentIndex].classList.remove("active");
-  currentIndex = (currentIndex + 1) % images.length;
-  images[currentIndex].classList.add("active");
+const imagens = document.querySelectorAll("#carrossel img");
+let index = 0;
+
+function trocarImagem() {
+  
+  imagens[index].classList.remove("active");
+  
+  index = (index + 1) % imagens.length;
+
+  imagens[index].classList.add("active");
 }
+
+setInterval(trocarImagem, 3000);
