@@ -9,8 +9,22 @@
 </head>
 
 <body>
+
+  <!-- MENU DE ACESSIBILIDADE -->
+  <div class="acessibilidade-topo" role="region" aria-label="Menu de acessibilidade">
+    <button type="button" onclick="aumentarFonte()">A+</button>
+    <button type="button" onclick="diminuirFonte()">A-</button>
+    <button type="button" onclick="toggleContraste()">Contraste</button>
+    <button type="button" onclick="toggleCinza()">Cinza</button>
+    <button type="button" onclick="toggleDarkMode()">🌙 Dark</button>
+  </div>
+
+  <!-- Indicador CTRL -->
+  <div class="cursor-indicador" id="cursorIndicador" aria-hidden="true"></div>
+
+  <!-- HEADER -->
   <header>
-    <nav class="navbar" aria-label="Menu principal">
+    <nav class="navbar">
       <h1>Oficina Mecânica Sales</h1>
       <ul>
         <li><a href="#quem-somos">Quem Somos</a></li>
@@ -22,51 +36,74 @@
     </nav>
   </header>
 
+  <!-- CONTEÚDO -->
   <main>
-    <section class="carrossel" id="carrossel" aria-label="Imagens da oficina">
-      <img src="img/oficina1.jpg" alt="Imagem da oficina 1" class="active" />
-      <img src="img/oficina2.jpg" alt="Imagem da oficina 2" />
-      <img src="img/oficina3.jpg" alt="Imagem da oficina 3" />
+
+    <!-- Carrossel -->
+    <section class="carrossel" id="carrossel">
+      <img src="img/oficina1.jpg" class="active" alt="">
+      <img src="img/oficina2.jpg" alt="">
+      <img src="img/oficina3.jpg" alt="">
     </section>
 
-    <section id="quem-somos" tabindex="0">
+    <!-- Quem Somos -->
+    <section id="quem-somos">
       <h2>Quem Somos</h2>
-      <p>Somos uma oficina especializada em manutenção preventiva e corretiva com mais de 20 anos de experiência.</p>
+      <p>
+        Somos uma oficina especializada em manutenção preventiva e corretiva,
+        com mais de 20 anos de experiência no mercado.
+      </p>
     </section>
 
-    <section id="diferencial" tabindex="0">
+    <!-- Diferencial -->
+    <section id="diferencial">
       <h2>Nosso Diferencial</h2>
-      <p>Atendimento rápido, peças de qualidade e garantia estendida nos serviços realizados.</p>
+      <p>
+        Atendimento rápido, peças de qualidade e garantia estendida
+        nos serviços realizados.
+      </p>
     </section>
 
-    <section id="clientes" tabindex="0">
+    <!-- Clientes -->
+    <section id="clientes">
       <h2>Opinião de Clientes</h2>
-      <blockquote>"Serviço excelente e equipe super atenciosa!" - João M.</blockquote>
-      <blockquote>"Consertaram meu carro em tempo recorde!" - Maria F.</blockquote>
+      <blockquote>
+        "Serviço excelente e equipe super atenciosa!" – João M.
+      </blockquote>
+      <blockquote>
+        "Consertaram meu carro em tempo recorde!" – Maria F.
+      </blockquote>
     </section>
 
-    <section id="localizacao" tabindex="0">
+    <!-- Localização -->
+    <section id="localizacao">
       <h2>Localização</h2>
       <iframe
         src="https://www.google.com/maps?q=Rua+Alameda+dos+Timburis,+39,+Franco+da+Rocha+-+Portal+da+Alamedas&output=embed"
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa com localização da oficina">
+        width="100%"
+        height="300"
+        style="border:0;"
+        loading="lazy">
       </iframe>
     </section>
 
-    <a href="https://wa.me/5511988690623" target="_blank" class="whatsapp-btn">
-    <img src="img/whatsapp.png" alt="WhatsApp">
-    </a>
-    
   </main>
 
-  
+  <!-- ✅ WHATSAPP AGORA FORA DO MAIN -->
+  <a href="https://wa.me/5511988690623"
+     target="_blank"
+     class="whatsapp-btn"
+     aria-label="Falar pelo WhatsApp">
+    <img src="img/whatsapp.png" alt="">
+  </a>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Oficina Mecânica Sales. Todos os direitos reservados.</p>
+    <p>&copy; 2026 Oficina Mecânica Sales. Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 
 </html>
